@@ -5,6 +5,7 @@
 // You can't open the index.html file using a file:// URL.
 
 import { getUserIDs, getListenEvents, getSong } from "./data.mjs";
+import { topGenres } from "./common.mjs";
 
 function getDuration(e) {
   return safeSong(e.song_id).duration_seconds ?? 0;
@@ -99,20 +100,6 @@ function everyDaySongs(events) {
   }
 
   return result;
-}
-
-function topGenres(events) {
-  const map = new Map();
-
-  for (const e of events) {
-    const song = getSong(e.song_id);
-
-    if (song?.genre) {
-      map.set(song.genre, (map.get(song.genre) || 0) + 1);
-    }
-  }
-
-  return [...map.entries()].sort((a, b) => b[1] - a[1]).map(([genre]) => genre);
 }
 
 /* ---------------- render ---------------- */
@@ -239,4 +226,7 @@ function init() {
   });
 }
 
-init();
+if (typeof document !== "undefined") {
+  console.log("init running");
+  init();
+}

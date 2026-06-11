@@ -1,0 +1,8 @@
+The website must contain a drop-down which lists four users.- Checked the site and the output showed the list of 4 users
+Selecting a user must display answers relevant to that user (see table below). - Checked the output and found it matched with the rubrics table
+The code written to calculate the answers to the questions must seem like it could handle different data if it were supplied, including the following edge-cases: Built the logic in the code accordingly
+User 4 has no data, so no questions apply to the user. Some intelligible statement should be shown to the user (e.g. “This user didn’t listen to any songs.”). - Built the logic and tested it for user 4
+If a question doesn’t apply (e.g. if no songs were ever listened to on a Friday night), the interface should completely hide the question and answer. Displaying the question and an empty result, or any kind of error, is not acceptable. - Built the function and checked that it works as per the instructions.
+If fewer than three (but more than zero) genres were listened to the site should list the top genres listened to. It must not display text like “Top 3 genres”, but may say “Top genres” or “Top 2 genres” or similar. - yes built and checked the logic
+Unit tests must be written for at least one non-trivial function. - Tested the topGenres function using unit tests in common.test.mjs. Tested that it correctly reads listening events for a user, aggregates genres from songs in those events, it counts how many genres appear and returns genres sorted in descending order of frequency.
+The website must score 100 for accessibility in Lighthouse - Yes .it scores 100% in accessibility and tested it on the deployed site also.
