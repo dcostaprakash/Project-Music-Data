@@ -4,7 +4,7 @@ import { topGenres } from "./common.mjs";
 import { getListenEvents, getSong } from "./data.mjs";
 
 test("topGenres returns genres sorted by frequency", () => {
-  const events = getListenEvents(1);
+  const events = getListenEvents("1");
 
   const result = topGenres(events);
 

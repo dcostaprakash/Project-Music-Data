@@ -227,6 +227,5 @@ function init() {
 }
 
 if (typeof document !== "undefined") {
-  console.log("init running");
   init();
 }
